@@ -11,12 +11,12 @@ import develop.beta1139.dialogviewpager.databinding.ViewpagerImageBinding
  * Created by tomo on 2017/10/08.
  */
 
-class ViewPagerDialogPagerAdapter(private val context: Context, private val images: List<String>) : PagerAdapter() {
+class ViewPagerDialogPagerAdapter(private val context: Context, private val images: List<Int>) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup?, position: Int): Any {
         val inflater = LayoutInflater.from(context)
         val binding = ViewpagerImageBinding.inflate(inflater, container, false)
-        binding.imageUrl = images[position]
+        binding.resource = images[position]
         container?.addView(binding.root)
         return binding.root
     }

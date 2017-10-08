@@ -2,10 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
-            name="imageUrl"
-            type="String" />
+            name="resource"
+            type="Integer" />
     </data>
 
     <LinearLayout
@@ -15,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageView
-            imageUrl="@{imageUrl}"
+            android:src="@{resource}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter" />
