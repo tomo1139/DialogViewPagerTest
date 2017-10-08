@@ -9,7 +9,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.viewModel = MainViewModel()
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        val dialog = ViewPagerDialog.newInstance()
+        dialog.show(supportFragmentManager, "")
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="develop.beta1139.dialogviewpager.ViewPagerDialogViewModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/left_image"
+                android:visibility="@{viewModel.currentPage == 1 ? View.INVISIBLE : View.VISIBLE}"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_toRightOf="@+id/left_image"
+                android:layout_toLeftOf="@+id/right_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            </android.support.v4.view.ViewPager>
+
+            <ImageView
+                android:id="@+id/right_image"
+                android:layout_alignParentRight="true"
+                android:visibility="@{viewModel.currentPage == viewModel.images.size() ? View.INVISIBLE : View.VISIBLE}"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:text="@{Integer.toString(viewModel.currentPage) + '/' + Integer.toString(viewModel.images.size())}"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>
+

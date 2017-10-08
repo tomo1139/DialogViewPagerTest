@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context="develop.beta1139.dialogviewpager.MainActivity">
 
     <data>
-        <variable
-            name="viewModel"
-            type="develop.beta1139.dialogviewpager.MainViewModel" />
     </data>
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent" />
 
-        <Button
-            android:text="Button"
-            android:onClick="@{() -> viewModel.onButtonClick()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
 </layout>
 
